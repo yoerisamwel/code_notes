@@ -6,3 +6,6 @@ www.w3schools.com
 
 SQL code examples.sql
 I added these SQl snippets as I find I use these the most. 
+
+Plotly folder
+Added several graph designs I find usefull and plan to use in the future.
