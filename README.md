@@ -29,3 +29,8 @@ A sunburst chart is used to represent hierarchical data with multiple levels in 
 Treemap chart
 
 A treemap chart visualizes hierarchical data using nested rectangles, allowing for efficient use of space to display large amounts of data, making it ideal for comparing proportions and understanding the distribution of categories within a dataset.
+
+
+ARIMA Folder
+
+I created this folder to store the python code for the ARIMA model I explored for calculating the rolling average used in time series analysis. 
