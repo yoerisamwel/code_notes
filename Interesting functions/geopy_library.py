@@ -24,3 +24,16 @@ point_b = (51.5007, -0.1246)  # Coordinates for the London Eye
 # Calculate the distance between the two points
 distance = geodesic(point_a, point_b).kilometers
 print(f"Distance: {distance:.2f} km")
+
+
+
+
+
+
+
+
+
+
+
+
+
