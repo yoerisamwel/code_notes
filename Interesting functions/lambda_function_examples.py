@@ -207,8 +207,40 @@ print("Maximum Number:", max_number)
 # Output:
 # Maximum Number: 5
 
+from functools import reduce
+
+# Example 7: Using Lambda with reduce from functools
+
+# List of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Calculate the product of all numbers using a Lambda function and reduce
+product = reduce(lambda x, y: x * y, numbers)
+
+print('Product of Numbers:', product)
+
+# Example 8: Using Lambda with Conditional Expressions
+
+# List of numbers
+numbers = [10, 5, 8, 20, 15]
+
+# Use a Lambda function with a conditional expression to filter and square even numbers
+filtered_and_squared = list(map(lambda x: x**2 if x % 2 == 0 else x, numbers))
+
+print('Filtered and Squared Numbers:', filtered_and_squared)
 
 
+# Example 9: Using Lambda with key in max and min to Find Extremes
+
+# List of tuples representing products with names and prices
+products = [("Laptop", 1280), ("Phone", 880), ("Tablet", 580), ("Smartwatch", 280)]
+
+# Find the most and least expensive products using lambda functions
+most_expensive = max(products, key=lambda item: item[1])
+least_expensive = min(products, key=lambda item: item[1])
+
+print("Most Expensive Product:", most_expensive)
+print("Least Expensive Product:", least_expensive)
 
 
 
