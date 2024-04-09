@@ -128,3 +128,87 @@ count_vowels = lambda s: sum(1 for char in s if char.lower() in 'aeiou')
 print(count_vowels(s))
 #For the string "clcoding", the output will be 2 because there are two vowels ('o' and 'i').
 
+
+# Regular function
+def add(x, y):
+    return x + y
+
+# Equivalent Lambda function
+lambda_add = lambda x, y: x + y
+
+# Using both functions
+result_regular = add(3, 5)
+result_lambda = lambda_add(3, 5)
+
+print("Result (Regular Function):", result_regular)
+print("Result (Lambda Function):", result_lambda)
+
+#Example 2: Sorting with Lambda
+# List of tuples
+students = [('Alice', 25), ('Bob', 30), ('Charlie', 22)]
+
+# Sort by age using a Lambda function
+sorted_students = sorted(students, key=lambda student: student[1])
+
+print("Sorted Students by Age:", sorted_students)
+
+# Output:
+# Sorted Students by Age: [('Charlie', 22), ('Alice', 25), ('Bob', 30)]
+
+#Example 3: Filtering with Lambda
+# List of numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Filter even numbers using a Lambda function
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+
+print("Even Numbers:", even_numbers)
+
+# Output:
+# Even Numbers: [2, 4, 6, 8]
+
+
+#Example 3: Filtering with Lambda
+# List of numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Filter even numbers using a Lambda function
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+
+print("Even Numbers:", even_numbers)
+
+# Output:
+# Even Numbers: [2, 4, 6, 8]
+
+
+#Example 4: Mapping with Lambda
+# List of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Square each number using a Lambda function
+squared_numbers = list(map(lambda x: x**2, numbers))
+
+print("Squared Numbers:", squared_numbers)
+
+# Output:
+# Squared Numbers: [1, 4, 9, 16, 25]
+
+
+#The code from the image provides an example of using a Lambda function
+#with the max function in Python to find the minimum number in a list:
+# List of numbers
+numbers = [10, 5, 8, 20, 15]
+
+# Find the maximum number using a Lambda function
+max_number = max(numbers, key=lambda x: -x)  # Use negation for finding the minimum
+
+print("Maximum Number:", max_number)
+
+# Output:
+# Maximum Number: 5
+
+
+
+
+
+
