@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PivotTable.js</title>
+
+        <!-- external libs from cdnjs -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/pivot.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/pivot.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/d3_renderers.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/c3_renderers.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/export_renderers.min.js"></script>
+
+        <style>
+            body {font-family: Verdana;}
+            .node {
+              border: solid 1px white;
+              font: 10px sans-serif;
+              line-height: 12px;
+              overflow: hidden;
+              position: absolute;
+              text-indent: 2px;
+            }
+            .c3-line, .c3-focused {stroke-width: 3px !important;}
+            .c3-bar {stroke: white !important; stroke-width: 1;}
+            .c3 text { font-size: 12px; color: grey;}
+            .tick line {stroke: white;}
+            .c3-axis path {stroke: grey;}
+            .c3-circle { opacity: 1 !important; }
+            .c3-xgrid-focus {visibility: hidden !important;}
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(function(){
+                if(window.location != window.parent.location)
+                    $("<a>", {target:"_blank", href:""})
+                        .text("[pop out]").prependTo($("body"));
+
+                $("#output").pivotUI(
+                    $.csv.toArrays($("#output").text()),
+                    $.extend({
+                        renderers: $.extend(
+                            $.pivotUtilities.renderers,
+                            $.pivotUtilities.c3_renderers,
+                            $.pivotUtilities.d3_renderers,
+                            $.pivotUtilities.export_renderers
+                            ),
+                        hiddenAttributes: [""]
+                    }, {})
+                ).show();
+             });
+        </script>
+        <div id="output" style="display: none;">,country,currency,numberrange,alphanumeric
+0,Singapore,$96.96 ,8,LOH25KDW2YI
+1,Sweden,$72.00 ,6,HLU46VYY1WW
+2,Vietnam,$31.47 ,3,VSJ69OBF1JF
+3,Poland,$63.73 ,5,MJF53IYH3LR
+4,Italy,$32.16 ,8,XLB62LDR9VI
+5,Poland,$49.74 ,2,HBC86OOK8QM
+6,Ireland,$83.03 ,8,UTK85WMJ7DR
+7,China,$52.86 ,1,LYN56UWH9BD
+8,Belgium,$77.02 ,8,KRY74GHJ4MX
+9,Colombia,$56.66 ,9,HSV94UIK1QJ
+10,Brazil,$89.07 ,9,ELM97LZU8BZ
+11,Peru,$63.19 ,3,RSC82YHB9BQ
+12,India,$76.25 ,2,SWM45NOS8IG
+13,Colombia,$64.72 ,8,SYX17MMU3AS
+14,Singapore,$69.89 ,2,NWC37ESM3JT
+15,Austria,$47.19 ,2,KBH88MJF7RD
+16,Philippines,$52.59 ,1,HSG52GTS4PB
+17,Colombia,$17.25 ,8,VEX28QVL6GD
+18,Sweden,$50.75 ,3,UBJ84LOU0SD
+19,Norway,$8.66 ,6,SIC43ZFI4MN
+20,Philippines,$42.13 ,6,WGR52STG8WG
+21,Costa Rica,$43.89 ,6,TJR59GNZ1SD
+22,Vietnam,$61.08 ,8,OKJ67TKK3OH
+23,South Korea,$82.96 ,2,MZD11KLI8UO
+24,South Korea,$64.63 ,8,ILM71XKK8TS
+25,India,$55.02 ,8,TVX86KDE3EH
+26,Chile,$8.61 ,3,TSV33TLI1OS
+27,Pakistan,$65.27 ,0,VJJ51HCK3SO
+28,Poland,$58.40 ,0,XKA32CNZ4UH
+29,Nigeria,$59.99 ,3,HUV63UHZ8KP
+30,United Kingdom,$16.38 ,9,VPA88YCY6FV
+31,Mexico,$52.21 ,9,IKV71TGL8KF
+32,Indonesia,$70.73 ,2,IMJ51KJC7IB
+33,Pakistan,$32.08 ,3,PNR20XAZ5LT
+34,Austria,$17.66 ,3,CFR14CUD4KV
+35,Singapore,$66.33 ,10,SEP06HIM3IQ
+36,Ireland,$72.61 ,0,OUK35OHC2ED
+37,Austria,$51.17 ,9,TLP94MPJ5SS
+38,Sweden,$73.36 ,7,PKG13PWZ5YA
+39,Russian Federation,$71.12 ,9,FNF13TNH6BU
+40,Poland,$9.06 ,5,UFL14ONX5NV
+41,Philippines,$55.52 ,5,LBL42TFR3EF
+42,Italy,$50.54 ,5,PVT23HPG0UK
+43,Ukraine,$75.15 ,5,PKA65BRL8ZX
+44,Germany,$57.76 ,2,SSF50YMM2MM
+45,South Korea,$45.19 ,8,CIB37ITW1QF
+46,China,$66.03 ,2,TDI34IVL9KJ
+47,Belgium,$65.31 ,1,LYO46OUH7XV
+48,Norway,$50.94 ,5,GXE24RFT1HT
+49,Norway,$27.52 ,0,BSV46RBH8YX
+50,Singapore,$67.33 ,9,TQG65XWT2UB
+51,Brazil,$92.53 ,0,XHM67LJV5RJ
+52,Spain,$17.33 ,2,XVP37ZPG2JK
+53,Australia,$41.24 ,0,DWX43RMC7QX
+54,South Korea,$34.13 ,0,IXQ59TNK3AC
+55,Mexico,$9.26 ,7,UUG21NEP6YK
+56,Turkey,$25.59 ,1,SDW37ORK5WK
+57,Sweden,$65.92 ,6,NIF12THN0DI
+58,New Zealand,$77.93 ,4,UHI15JVR6XM
+59,Belgium,$23.16 ,8,HNF45QNS5FT
+60,China,$42.97 ,0,LWE81BOV3PJ
+61,Pakistan,$36.99 ,8,UHN15RLF9JK
+62,Russian Federation,$52.52 ,9,DUK86FTH5TJ
+63,Italy,$9.95 ,5,UGW44LGM6RR
+64,Australia,$31.55 ,9,WOW51JTG0CT
+65,Spain,$23.08 ,2,CMD13EKY6QJ
+66,Philippines,$96.16 ,7,CJA99RGD3ED
+67,Germany,$33.03 ,0,PSZ21EIH2GV
+68,Canada,$24.68 ,9,AHF18AEZ6YP
+69,Chile,$42.57 ,6,YEY46WZR0JS
+70,Peru,$9.17 ,10,FVB79VYQ6RB
+71,United Kingdom,$42.93 ,5,NDE11BMK3TQ
+72,Ireland,$94.54 ,4,EFM71CDM9DV
+73,United Kingdom,$62.90 ,3,MRD72MQY6XA
+74,Norway,$20.36 ,6,HFM25RGB8RY
+75,Netherlands,$46.80 ,9,PAO15WWA3VN
+76,Austria,$73.90 ,4,EOX25SGQ8HB
+77,South Africa,$9.62 ,7,BBN53IKO0EO
+78,Netherlands,$20.04 ,5,EME06TVW9XN
+79,Austria,$86.25 ,4,JRF32FIN8QP
+80,Indonesia,$38.58 ,1,LRG90HWL6EJ
+81,Russian Federation,$31.89 ,5,HEX43WYI4XJ
+82,Philippines,$85.32 ,3,GIG75IYL6JR
+83,Indonesia,$6.64 ,7,DXV91KVS6PB
+84,United States,$85.32 ,2,NCO71FUG5ZH
+85,United States,$77.50 ,2,TXJ86PKA6FA
+86,United Kingdom,$61.06 ,7,MEH48FWL1DS
+87,Ireland,$67.51 ,1,PQK25JJL8IB
+88,China,$25.19 ,6,DRO95QSP8YL
+89,South Africa,$96.65 ,4,DJK26WQX0TP
+90,Philippines,$93.93 ,5,WIN74FYU1VB
+91,Netherlands,$82.66 ,1,SGC25QCF5FJ
+92,Australia,$26.85 ,3,EQL94SHH4HB
+93,Australia,$21.17 ,2,KKJ84ZFI7OG
+94,Indonesia,$87.63 ,0,HMN44XIJ6FT
+95,Australia,$30.38 ,3,EOH15IQR7HY
+96,Indonesia,$19.89 ,4,FLO74MPJ2HK
+97,Russian Federation,$37.27 ,0,EHL11LNH6MK
+98,Austria,$71.06 ,6,UWH22BIL0MB
+99,Australia,$53.87 ,9,VCS52UBC7BO
+</div>
+    </body>
+</html>
