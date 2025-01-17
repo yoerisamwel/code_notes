@@ -11,7 +11,7 @@ print(combined_list)
 # The expected output should be: [7, 9, 11, 13, 15]
 
 # Example removing non values
-your_list = [1, 2, 3, 4, 5]
+your_list = [1, 2, 3, 4, 5, ]
 
 # Explanation
 filtered_list = list(filter(lambda x: x is not None, your_list))
